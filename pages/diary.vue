@@ -17,10 +17,16 @@
          </div>
         </div>
         <ul class="snsbtniti">
+          <!-- Twitterリンク -->
           <li><a  href="https://twitter.com/share?url=https://haniwaman.com/original-share-btn/&text=『３歳以下の子供に使える子育てアプリ』" 
            rel="nofollow" target="_blank" class="flowbtn6 fl_tw1"><img src="~/assets/000a.jpg" width="50px" height="50px" class="pic"></a></li>
-    <li><a  class="js-sns-link" href="//timeline.line.me/social-plugin/share?url=&text=『３歳以下の子供に使える子育てアプリ』" target="_blank" rel="nofollow noopener noreferrer"></a><img src="~/assets/in.jpg" width="50px" height="50px" class="pic"></li>
-    <li><a class="js-sns-link" href="//www.facebook.com/sharer/sharer.php?u=&t=『３歳以下の子供に使える子育てアプリ』" target="_blank" rel="nofollow noopener noreferrer"><img src="~/assets/fa.jpg" width="50px" height="50px" class="pic"></a></li>
+           <!-- LINEリンク -->
+          <a href="//timeline.line.me/social-plugin/share?url=シェアするページのURL&text=『３歳以下の子供に使える子育てアプリ』" target="_blank" rel="nofollow noopener noreferrer">
+    <img src="~/assets/line.png" width="50px" height="50px" class="pic">
+</a>
+          <!-- FaceBookリンク -->
+          <li><a class="js-sns-link" href="//www.facebook.com/sharer/sharer.php?u=&t=『３歳以下の子供に使える子育てアプリ』" target="_blank" rel="nofollow noopener noreferrer">
+          <img src="~/assets/fa.jpg" width="50px" height="50px" class="pic"></a></li>
         </ul>
      <div class="m-3">
     <button @click="add">
@@ -32,15 +38,17 @@
 <div class=" diary-title">Baby Diarys</div>
   <div class="containers">
 <div v-for="item in lastdata" :key="item.index" class="item">
-  {{item.diarydate}}<br>
+<div class="date">{{item.diarydate}}</div><br>
 {{item.message}}<br>
 <div v-if="item.img">
- <img :src="item.img" width="350px" height="300px">
+ <img :src="item.img" width="300px" height="300px">
  </div>
  <div v-if="!item.img"> 
-    <img src="~/assets/noimage.png" width="350px" height="350px" class="pic">
+    <img src="~/assets/noimage.png" width="300px" height="300px" class="pic">
  </div>
+ <button @click="clear(item)"> <img src="~/assets/trash.png" width="30px" height="30px" class="pic"></button>
     </div>
+    <br>
   </div>
   </div>
 </div>
@@ -151,7 +159,18 @@ export default {
           })
       }) 
   },
-     ...mapActions(['diaryupdate']),
+  clear(i) {
+      if (this.$store.state.UserInfo) {
+          alert(`消去しますか？`)
+          const diarysD = {
+            diaryList: i,
+            UserInfo: this.$store.state.UserInfo,
+          }
+      console.log(diarysD)
+      this.deleteDiaryData(diarysD)
+      }
+    },
+   ...mapActions(['deleteDiaryData']),
   },
 }
 </script>
@@ -366,5 +385,8 @@ background:#00c300;
 }
 .picture{
   margin: 5% 0 5% 0;
+}
+.date{
+  font-weight: bold;
 }
 </style>
