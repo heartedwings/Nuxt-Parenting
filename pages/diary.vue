@@ -106,7 +106,7 @@ export default {
       }
 
     const diarys= {
-      img: lastdata.img ? lastdata.img : '/noimage.png',
+      img: data.img ? data.img : '/noimage.png',
       diarydate: data.diarydate? data.diarydate : '',
       message: data.message ? data.message : 0,
     }

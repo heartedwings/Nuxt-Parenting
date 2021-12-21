@@ -2,6 +2,7 @@
   <div class="profileImg">
     <div class="profile-title">PROFILE</div>
 
+    <no-ssr>
     <div>
       <img class="profile-hr" :src="require(`~/assets/hr.png`)" />
     </div>
@@ -16,24 +17,24 @@
           v-for="userItemName in FinalMainData.babyname"
           :key="userItemName.index"
         >
-          名前 :
-          <span>{{ userItemName }}</span>
+          名前
+          <div>{{ userItemName }}</div>
         </div>
 
         <div
           v-for="userItemGender in FinalMainData.gender"
           :key="userItemGender.index"
         >
-          性別 :
-          <span>{{ userItemGender }}</span>
+          性別
+          <div>{{ userItemGender }}</div>
         </div>
 
         <div
           v-for="userItemBirth in FinalMainData.birth"
           :key="userItemBirth.index"
         >
-          生年月日 :
-          <span>{{ userItemBirth }}</span>
+          生年月日
+          <div>{{ userItemBirth }}</div>
         </div>
 
         <div
@@ -41,7 +42,7 @@
           :key="userItemHeight.index"
         >
           身長 :
-          <span>{{ userItemHeight }} cm</span>
+          <div>{{ userItemHeight }} cm</div>
         </div>
 
         <div
@@ -49,19 +50,22 @@
           :key="userItemWeight.index"
         >
           体重 :
-          <span>{{ userItemWeight }} g</span>
+          <div>{{ userItemWeight }} g</div>
         </div>
       </div>
     </div>
 
     <div class="allergy-nav">
       アレルギー
-      <div v-for="allergyI in FinalImg" :key="allergyI.id" class="container2">
-        <div v-for="i in allergyI.newallergy" :key="i.id" class="container2">
+      <div v-for="allergyI in FinalImg" :key="allergyI.index" class="container2">
+        <div v-for="i in allergyI.newallergy" :key="i.index" class="container2">
           <img :src="i" width="60px" height="60px" />
         </div>
       </div>
     </div>
+
+    </no-ssr>
+
   </div>
 </template>
 
