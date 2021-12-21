@@ -3,6 +3,13 @@ require('dotenv').config();
 const {VUE_APP_FIREBASE_PROJECT_ID} = process.env
 
 export default {
+  chainWebpack: config => {
+    config.plugin('copy').tap(([options]) => {
+      options[0].ignore = ['./index.html', '.DS_Store']
+      return [options]
+    })
+  },
+
   mode: 'universal',
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
@@ -59,6 +66,8 @@ export default {
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
   axios: {},
 
+  // hostingの時に書いてあげると、.nuxtのdistをコピーできるよ！
+  target:'static',
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {
     // mp3ファイル再生のための拡張
@@ -82,6 +91,19 @@ export default {
     transpile: [
       'vee-validate/dist/rules',
     ],
+    // 内部にcssnanoプラグイン構成を追加することで問題を修正
+        postcss: {
+            plugins: {
+                'cssnano': {
+                    preset: [
+                        "default",
+                        {
+                            "calc": false
+                        }
+                    ]
+                }
+            }
+        }
   },
 
   env: {
