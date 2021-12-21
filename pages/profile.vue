@@ -49,7 +49,7 @@
         アレルギー
         <div v-for="allergyI in FinalImg" :key="allergyI.id">
           <div class="container2">
-            <div class="container2" v-for="i in allergyI.newallergy" :key="i.id">
+            <div v-for="i in allergyI.newallergy" :key="i.id" class="container2">
               <img :src="i" width="70px" height="70px" />
             </div>
           </div>

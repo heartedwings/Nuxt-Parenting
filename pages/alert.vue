@@ -235,7 +235,7 @@ export default {
       }
     },
     start() {
-    //   const self = this // プログレスバーの進捗値
+      const self = this // プログレスバーの進捗値
     //   let  val // 一定間隔で処理を行うintervalのIDを保持
     //   let  intervalID
     //     val = 0;  // ボタンを無効にする(何回も押せないように)

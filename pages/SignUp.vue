@@ -4,9 +4,7 @@
     <div><img class="signup-hr" :src="require(`~/assets/hr.png`)" /></div>
 
     <div class="profileImg">
-       <!-- <img :src="item.img" width="350px" height="300px"> -->
        <input type="file" @change="upload">
-       {{this.picture}}
     </div>
     <p>赤ちゃんのニックネーム</p>
     <input v-model="babyname" type="text" />
@@ -70,7 +68,7 @@
           >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 登録
         </div>
       </button>
-       <img :src="newnew" width="350px" height="300px">
+       <!-- <img :src="newnew" width="350px" height="300px"> -->
     </div>
   </div>
 </template>
