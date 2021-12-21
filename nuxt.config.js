@@ -3,6 +3,13 @@ require('dotenv').config();
 const {VUE_APP_FIREBASE_PROJECT_ID} = process.env
 
 export default {
+  chainWebpack: config => {
+    config.plugin('copy').tap(([options]) => {
+      options[0].ignore = ['./index.html', '.DS_Store']
+      return [options]
+    })
+  },
+  
   mode: 'universal',
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
@@ -82,6 +89,19 @@ export default {
     transpile: [
       'vee-validate/dist/rules',
     ],
+    // 内部にcssnanoプラグイン構成を追加することで問題を修正
+        postcss: {
+            plugins: {
+                'cssnano': {
+                    preset: [
+                        "default",
+                        {
+                            "calc": false
+                        }
+                    ]
+                }
+            }
+        }
   },
 
   env: {
