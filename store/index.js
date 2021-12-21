@@ -56,7 +56,6 @@ export const actions = {
       commit('allergyupdate',allergys,{root: true} )
       })
   },
-
   // ご飯更新
   foodupdate({commit}, foods) {
     // console.log(foods.UserInfo)

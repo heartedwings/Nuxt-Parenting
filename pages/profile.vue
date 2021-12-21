@@ -4,7 +4,7 @@
       <div class="profile-title">PROFILE</div>
 
       <div><img class="profile-hr" :src="require(`~/assets/hr.png`)" /></div>
-
+      
       <div>
         <img :src="FinalproImg2" />
       </div>

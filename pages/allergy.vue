@@ -95,7 +95,7 @@ export default {
       this.$router.push({ name: 'index' })
     },
     getallergy() {
-      alert(`アレルギーを登録してもよろしいでしょうか`)
+      confirm(`アレルギーを登録してもよろしいでしょうか`)
       const newallergy = []
       const allergy = document.getElementsByName('allergy')
       const allergyImg = document.getElementsByClassName('allergy')

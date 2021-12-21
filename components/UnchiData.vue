@@ -58,7 +58,7 @@ export default {
   methods: {
     clear(i) {
       if (this.$store.state.UserInfo) {
-          alert(`消去しますか？`)
+          confirm(`消去しますか？`)
 
           const unchisD = {
             unchiList: i,

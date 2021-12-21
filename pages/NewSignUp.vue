@@ -45,7 +45,7 @@ export default {
   },
   methods: {
     register() {
-      alert('この内容で登録をしてもよろしいでしょうか')
+      confirm('この内容で登録をしてもよろしいでしょうか')
       this.$store.dispatch('register', {
         email: this.email,
         password: this.password,

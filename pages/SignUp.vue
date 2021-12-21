@@ -68,7 +68,6 @@
           >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 登録
         </div>
       </button>
-       <!-- <img :src="newnew" width="350px" height="300px"> -->
     </div>
   </div>
 </template>
@@ -118,7 +117,6 @@ export default {
      this.newnew=newpicture4
       console.log(this.newnew)
       }
-
   },
   methods: {
     addinfo() {
@@ -147,6 +145,7 @@ export default {
            this.weight=""
         })
       }
+         this.$router.push({ name: 'index' })
     },
     // 画像のパス取得&storageへアクセスし保存
     upload(e) {

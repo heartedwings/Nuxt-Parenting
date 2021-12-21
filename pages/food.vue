@@ -192,7 +192,7 @@ export default {
     },
     addfood() {
       if (this.$store.state.UserInfo) {
-        alert(`この内容で登録してもよろしいでしょうか`)
+        confirm(`この内容で登録してもよろしいでしょうか`)
         const foods = {
           foodmemo: this.message,
           kinds: this.kinds,

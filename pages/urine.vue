@@ -72,7 +72,7 @@ created(){
     },
     addurine() {
       if(this.$store.state.UserInfo){
-      alert(`この内容で登録してもよろしいでしょうか`)
+      confirm(`この内容で登録してもよろしいでしょうか`)
       const urines = {
         urinememo: this.urinememo,
         urinedate: this.urinedate,

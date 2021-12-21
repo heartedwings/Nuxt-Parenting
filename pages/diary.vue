@@ -119,7 +119,7 @@ export default {
     //firebaseへ追加処理
     add() {
       if(this.$store.state.UserInfo){
-        alert(`この内容で登録をしてもよろしいでしょうか`)
+        confirm(`この内容で登録をしてもよろしいでしょうか`)
        UserRef
        .doc(this.$store.state.UserInfo)
        .update({

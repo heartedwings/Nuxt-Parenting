@@ -172,7 +172,7 @@ console.log(this.$store.state.UserInfo)
   methods:{
    addheight() {
       if(this.$store.state.UserInfo){
-      alert(`この内容で登録してもよろしいでしょうか`)
+      confirm(`この内容で登録してもよろしいでしょうか`)
       const heights = {
       height: this.heightcm+`.`+this.heightmm,
       heightdate:this.heightdate,
@@ -192,7 +192,7 @@ console.log(this.$store.state.UserInfo)
     },
     addweight() {
       if(this.$store.state.UserInfo){
-      alert(`この内容で登録してもよろしいでしょうか`)
+      confirm(`この内容で登録してもよろしいでしょうか`)
       const weights = {
        weight: this.weightk+`.`+this.weightg,
        weightdate:this.weightdate,
