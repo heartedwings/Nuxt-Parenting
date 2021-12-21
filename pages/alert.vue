@@ -1,42 +1,38 @@
 <template>
   <div>
     <div class="timer-title">MILK TIMER</div>
-
     <div><img class="timer-hr" :src="require(`~/assets/hr.png`)" /></div>
-
-    <div id="timer">
       <div class="timer">
-        <div class="time">
-          <div class="countdown">MILK TIME COUNTDOWN</div><br />
+          <div class="countdown">MILK TIME COUNTDOWN</div><br/>
           <!-- <progress id="myProgress" value="0" max="100">0%</progress> -->
           <div class="container">
             <div class="m-3">
               <button  class="  w-12 h-12   bg-red-800   text-lg text-white   font-semibold rounded-full hover:bg-red-700 " @click="countup" >
                 +
-              </button><br><br>
+              </button>
+              <br><br>
                <button  class="  w-12 h-12   bg-red-800   text-lg text-white   font-semibold rounded-full hover:bg-red-700 " @click="countdown" >
                 -
               </button>
-            </div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            </div>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             <div class="math">{{ CountTime }}</div>
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             <div class="m-3">
               <button
                 class=" w-12  h-12  bg-red-800  text-lg text-white  font-semibold rounded-full hover:bg-red-700 " @click="countups">
                 +
-              </button><br><br>
+              </button>
+              <br><br>
                <button  class="  w-12 h-12   bg-red-800   text-lg text-white   font-semibold rounded-full hover:bg-red-700 " @click="countdowns" >
                 -
               </button>
             </div>
           </div>
-        </div>
+      
         <div class="container">
           <div class="m-3">
-            <button
-            id="myButton"
-             @click="start"
-             >
+            <button id="myButton" @click="start">
               <div class="button">
                 <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6"  fill="none" viewBox="0 0 24 24"  stroke="currentColor"  width="30px"
                   height="30px">
@@ -49,8 +45,7 @@
             </button>
           </div>
           <div class="m-3">
-            <button
-             @click="stop">
+            <button @click="stop">
               <div class="button">
                 <svg xmlns="http://www.w3.org/2000/svg"  class="h-6 w-6"  fill="none"  viewBox="0 0 24 24" stroke="currentColor">
                   <path  stroke-linecap="round"  stroke-linejoin="round"  stroke-width="2"
@@ -63,28 +58,26 @@
             </button>
           </div>
         </div>
+  
 
- 
-    </div>
+
     <div class="timer-title">LULLABY</div>
-
     <div><img class="timer-hr" :src="require(`~/assets/hr.png`)" /></div>
-
     <div class="timer">
     <div class="container">
       <div class="item">
           music1
-     <img src="~/assets/background-music.jpeg" width="100px" height="100px"/><br>
-    <div class="container">
-     <div class="buttonn">
-    <button @click="komori1">
-      <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><br>
-        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-          d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z"/>
-        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/><br>
-      </svg>
-    </button>
-    </div>
+          <img src="~/assets/background-music.jpeg" width="100px" height="100px"/><br>
+           <div class="container">
+               <div class="buttonn">
+                   <button @click="komori1">
+                       <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><br>
+                       <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                         d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z"/>
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/><br>
+                       </svg>
+                   </button>
+            </div>
    &nbsp;&nbsp;&nbsp;&nbsp;
     <div class="buttonn">
     <button>
@@ -133,6 +126,7 @@
       </svg>
     </button></div>
     &nbsp;&nbsp;&nbsp;&nbsp;
+
     <div class="buttonn">
     <button>
       <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none"  viewBox="0 0 24 24" stroke="currentColor">
@@ -141,7 +135,8 @@
       </svg>
     </button>
     </div>
-    </div><br>
+    </div>
+    <br>
   </div>
     </div>
     </div>
