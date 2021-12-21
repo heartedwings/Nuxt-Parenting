@@ -9,7 +9,7 @@ export default {
       return [options]
     })
   },
-  
+
   mode: 'universal',
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
@@ -66,6 +66,8 @@ export default {
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
   axios: {},
 
+  // hostingの時に書いてあげると、.nuxtのdistをコピーできるよ！
+  target:'static',
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {
     // mp3ファイル再生のための拡張

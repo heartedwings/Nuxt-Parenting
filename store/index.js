@@ -268,7 +268,22 @@ export const actions = {
       console.error("Error removing document: ", error);
   });
   },
-
+    // 日記の消去機能
+    deleteDiaryData( { commit }, diarysD) {
+      firebase
+      .firestore()
+      db
+      .collection(`User`)
+      .doc(diarysD.UserInfo)
+      .update({
+        diary : firebase.firestore.FieldValue.arrayRemove(diarysD.diaryList)
+      })
+      .then(() => {
+        console.log("Document successfully deleted!");
+    }).catch((error) => {
+        console.error("Error removing document: ", error);
+    });
+    },
   // ユーザー情報取得
   fetchUser({commit},userData ) {
    commit('fetchUser',userData)
