@@ -68,6 +68,7 @@ export default {
 
   // hostingの時に書いてあげると、.nuxtのdistをコピーできるよ！
   target:'static',
+  
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {
     // mp3ファイル再生のための拡張
