@@ -3,6 +3,11 @@ require('dotenv').config();
 const {VUE_APP_FIREBASE_PROJECT_ID} = process.env
 
 export default {
+  generate: {
+    minify: {
+      collapseWhitespace: false
+    }
+  },
   chainWebpack: config => {
     config.plugin('copy').tap(([options]) => {
       options[0].ignore = ['./index.html', '.DS_Store']
@@ -68,6 +73,7 @@ export default {
 
   // hostingの時に書いてあげると、.nuxtのdistをコピーできるよ！
   target:'static',
+
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {
     // mp3ファイル再生のための拡張

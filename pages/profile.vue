@@ -1,7 +1,7 @@
 <template>
-  <div>
-    <div class="profileImg">
-      <div class="profile-title">PROFILE</div>
+  <div class="profileImg">
+    <no-ssr>
+    <div class="profile-title">PROFILE</div>
 
       <div><img class="profile-hr" :src="require(`~/assets/hr.png`)" /></div>
       
@@ -9,53 +9,61 @@
         <img :src="FinalproImg2" />
       </div>
 
-      <div class="profile-container">
-        <!-- デプロイ後 -->
-        <!-- <div class="upload-img">
-          <upload v-model="picture" />
-        </div> -->
-        <div class="profile-main">
-          <div>
-            <div v-for="userItemName in FinalMainData.babyname" :key="userItemName.id">
-              名前 :
-              <span>{{ userItemName }}</span>
-            </div>
-
-            <div v-for="userItemGender in FinalMainData.gender" :key="userItemGender.id">
-              性別 :
-              <span>{{ userItemGender }}</span>
-            </div>
-
-            <div v-for="userItemBirth in FinalMainData.birth" :key="userItemBirth.id">
-              生年月日 :
-              <span>{{ userItemBirth }}</span>
-            </div>
-
-            <div v-for="userItemHeight in FinalMainData.height" :key="userItemHeight.id">
-              身長 :
-              <span>{{ userItemHeight }} cm</span>
-            </div>
-
-            <div v-for="userItemWeight in FinalMainData.weight" :key="userItemWeight.id">
-              体重 :
-              <span>{{ userItemWeight }} g</span>
-            </div>
-          </div>
-
+    <div class="profile-container">
+      <div class="profile-main">
+        <div
+          v-for="userItemName in FinalMainData.babyname"
+          :key="userItemName.index"
+        >
+          名前
+          <div>{{ userItemName }}</div>
         </div>
-      </div>
 
-      <div class="allergy-nav">
-        アレルギー
-        <div v-for="allergyI in FinalImg" :key="allergyI.id">
-          <div class="container2">
-            <div v-for="i in allergyI.newallergy" :key="i.id" class="container2">
-              <img :src="i" width="70px" height="70px" />
-            </div>
-          </div>
+        <div
+          v-for="userItemGender in FinalMainData.gender"
+          :key="userItemGender.index"
+        >
+          性別
+          <div>{{ userItemGender }}</div>
+        </div>
+
+        <div
+          v-for="userItemBirth in FinalMainData.birth"
+          :key="userItemBirth.index"
+        >
+          生年月日
+          <div>{{ userItemBirth }}</div>
+        </div>
+
+        <div
+          v-for="userItemHeight in FinalMainData.height"
+          :key="userItemHeight.index"
+        >
+          身長 :
+          <div>{{ userItemHeight }} cm</div>
+        </div>
+
+        <div
+          v-for="userItemWeight in FinalMainData.weight"
+          :key="userItemWeight.index"
+        >
+          体重 :
+          <div>{{ userItemWeight }} g</div>
         </div>
       </div>
     </div>
+
+    <div class="allergy-nav">
+      アレルギー
+      <div v-for="allergyI in FinalImg" :key="allergyI.index" class="container2">
+        <div v-for="i in allergyI.newallergy" :key="i.index" class="container2">
+          <img :src="i" width="60px" height="60px" />
+        </div>
+      </div>
+    </div>
+
+    </no-ssr>
+
   </div>
 </template>
 
@@ -76,7 +84,7 @@ export default {
       picture: null,
       FinalImg: [],
       FinalproImg: [],
-      FinalproImg2: "",
+      FinalproImg2: '',
       // オブジェクト型にして保存、配列から呼び出し
       FinalMainData: [],
     }
@@ -111,7 +119,7 @@ export default {
       // console.log(this.FinalImg);
     }
 
-// プロフィール画像
+    // プロフィール画像
     const proImg = this.getUser.usersSign
     const proImg2 = []
     // console.log(proImg);
@@ -124,16 +132,14 @@ export default {
 
       // console.log(lastProImgArray3);
 
-    for ( let ii = 0; ii < lastProImgArray3.length; ii++ ) {
+      for (let ii = 0; ii < lastProImgArray3.length; ii++) {
+        // console.log(lastProImgArray3[ii].picture);
 
-      // console.log(lastProImgArray3[ii].picture);
-
-      const finalproImg = proImg2.concat(lastProImgArray3[ii].picture)
-      this.FinalproImg2 = finalproImg
+        const finalproImg = proImg2.concat(lastProImgArray3[ii].picture)
+        this.FinalproImg2 = finalproImg
+      }
+      // console.log(this.FinalproImg2);
     }
-    // console.log(this.FinalproImg2);
-    }
-
 
     // 名前とか体重まで
     const mainData = this.getUser.usersSign
@@ -144,11 +150,10 @@ export default {
     let mainDataArray3 = []
     if (mainDataArray2) {
       mainDataArray3 = JSON.parse(mainDataArray2)
-      console.log(mainDataArray3);
+      console.log(mainDataArray3)
     }
-    for ( let ii = 0; ii < mainDataArray3.length; ii++ ) {
-
-      console.log(mainDataArray3[ii]);
+    for (let ii = 0; ii < mainDataArray3.length; ii++) {
+      console.log(mainDataArray3[ii])
 
       const finalMainDataName = mainData2.concat(mainDataArray3[ii].babyname)
       const finalMainDataGender = mainData2.concat(mainDataArray3[ii].gender)
@@ -161,7 +166,7 @@ export default {
       this.FinalMainData.height = finalMainDataHeight
       this.FinalMainData.weight = finalMainDataWeight
     }
-    console.log(this.FinalMainData);
+    console.log(this.FinalMainData)
   },
 }
 </script>
@@ -185,11 +190,11 @@ export default {
   margin: 5% auto 10% auto;
 }
 .profile-main {
-  margin: 7% auto 0 auto;
+  margin: 7% auto 3% auto;
   font-size: 20px;
+  text-align: center;
 }
 .profile-title {
-  text-align: center;
   text-align: center;
   font-size: 200%;
   margin-top: 2%;
@@ -212,5 +217,10 @@ export default {
   margin-top: 5%;
   margin-bottom: 10%;
   font-size: 20px;
+}
+
+.proImg {
+  width: 200px;
+  margin: 0 auto 0 auto;
 }
 </style>
