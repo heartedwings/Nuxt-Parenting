@@ -291,8 +291,6 @@ export default {
     },
   },
 
-
-  methods: {},
 }
 </script>
 
@@ -325,7 +323,7 @@ $fc-width: 80%;
   width: 90%;
 }
 .fc {
-  color: rgb(43, 1, 5);
+  color: rgb(121, 29, 38);
   width: $fc-width;
   margin: 5% auto 5% auto;
   background-color: #ad8787;
@@ -447,5 +445,12 @@ td {
 
 .fc-dayGridMonth-view .fc-event-time {
   display: none;
+}
+
+.fc-daygrid-event-dot {
+  display: none;
+}
+.fc-daygrid-day-events {
+  text-align: center;
 }
 </style>
