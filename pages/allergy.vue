@@ -2,25 +2,29 @@
   <div class="allergyy">
     <div class="allergy-title">ALLERGY PAGE</div>
 
-    <div><img class="allergy-hr" :src="require(`~/assets/hr.png`)" /></div>
+    <div>
+      <img class="allergy-hr" :src="require(`~/assets/hr.png`)" alt="" />
+    </div>
 
     <div class="box_sample03">
       <div class="container">
-        <div v-for="item in foodduty" :key="item.foodname">
+        <div class="includeImg" v-for="item in foodduty" :key="item.foodname">
           <img
             :src="require(`~/assets/` + item.icon)"
-            width="50px"
-            height="50px"
+            width="60px"
+            height="60px"
             class="allergy"
+            alt="アレルギー画像"
           />
           <label class="checknox-wrap">
             <input type="checkbox" name="allergy" class="checkName" />
             <span class="checkmark"></span>
-            {{ item.foodname }}
+            <a class="itemName">{{ item.foodname }}</a>
           </label>
         </div>
       </div>
     </div>
+
     <div class="m-3">
       <button @click="getallergy">
         <div class="button">
@@ -44,6 +48,7 @@
         </div>
       </button>
     </div>
+
   </div>
 </template>
 
@@ -132,6 +137,7 @@ export default {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+  padding-left: 3px;
 }
 .item {
   flex-basis: auto;
@@ -152,10 +158,11 @@ export default {
   margin: -5% auto 5% auto;
   // text-align: center;
 }
-.allergyy {
-  margin-left: auto;
-  margin-right: auto;
-  // padding: 12px 8px;
+.includeImg {
+  margin: 0 15px 0 15px
+}
+.allergy {
+  margin: 5px auto 3px auto;
   align-items: center;
   cursor: pointer;
 }
@@ -193,6 +200,7 @@ export default {
   position: relative;
   padding-left: 30px;
   margin-bottom: 12px;
+  margin-left: 3px;
   cursor: pointer;
   font-size: 14px;
   user-select: none;
@@ -232,6 +240,10 @@ export default {
 /* チェック時 チェックマーク表示 */
 .checknox-wrap input:checked + .checkmark:after {
   display: block;
+}
+.itemName {
+  margin-right: 5px;
+  margin-left: -5px;
 }
 .m-3 {
   text-align: center;

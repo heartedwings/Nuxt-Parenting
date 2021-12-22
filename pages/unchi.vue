@@ -2,7 +2,7 @@
   <div class="unchi-main">
     <div class="unchi-title">UNCHI PAGE</div>
 
-    <div><img class="unchi-hr" :src="require(`~/assets/hr.png`)" /></div>
+    <div><img class="unchi-hr" :src="require(`~/assets/hr.png`)" alt="" /></div>
 
     <div class="unchi-container">
       <div class="flame-unchi">
@@ -277,7 +277,7 @@ export default {
   margin: 0 auto 3% auto;
   background-color: #fff2f2e5;
   padding: 5%;
-  width: 70%;
+  width: 80%;
   border-left: 5px dotted rgba(0, 0, 0, 0.1);
   box-shadow: 0 0 0 5px #fff2f2e5;
 

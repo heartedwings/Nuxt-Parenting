@@ -1,7 +1,7 @@
 <template>
   <div>
     <div class="timer-title">MILK TIMER</div>
-    <div><img class="timer-hr" :src="require(`~/assets/hr.png`)" /></div>
+    <div><img class="timer-hr" :src="require(`~/assets/hr.png`)" alt="" /></div>
       <div class="timer">
           <div class="countdown">MILK TIME COUNTDOWN</div><br/>
           <!-- <progress id="myProgress" value="0" max="100">0%</progress> -->
@@ -62,12 +62,12 @@
 
 
     <div class="timer-title">LULLABY</div>
-    <div><img class="timer-hr" :src="require(`~/assets/hr.png`)" /></div>
+    <div><img class="timer-hr" :src="require(`~/assets/hr.png`)" alt="" /></div>
     <div class="timer">
     <div class="container">
       <div class="item">
           music1
-          <img src="~/assets/background-music.jpeg" width="100px" height="100px"/><br>
+          <img src="~/assets/background-music.jpeg" width="100px" height="100px" alt="music1"/><br>
            <div class="container">
                <div class="buttonn">
                    <button @click="komori1">
@@ -91,7 +91,7 @@
   </div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
  <div class="item">
       music2
-     <img src="~/assets/background-music.jpeg" width="100px" height="100px"/><br>
+     <img src="~/assets/background-music.jpeg" width="100px" height="100px" alt="music2"/><br>
   <div class="container">
      <div class="buttonn">
     <button @click="komori2">
@@ -115,7 +115,7 @@
   </div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
     <div class="item">
       music3
-     <img src="~/assets/background-music.jpeg" width="100px" height="100px"/><br>
+     <img src="~/assets/background-music.jpeg" width="100px" height="100px" alt="music3"/><br>
      <div class="container">
      <div class="buttonn">
     <button @click="komori3">

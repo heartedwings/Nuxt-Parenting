@@ -2,7 +2,7 @@
   <div class="home-main">
     <div class="home-title">HOME</div>
 
-    <div><img class="home-hr" :src="require(`~/assets/hr.png`)" /></div>
+    <div><img class="home-hr" :src="require(`~/assets/hr.png`)" alt="" /></div>
 
     <div>
       <Calender />

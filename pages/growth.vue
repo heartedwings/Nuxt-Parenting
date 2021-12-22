@@ -2,7 +2,7 @@
   <div class="growth">
     <div class="growth-title">GROWTH PAGE</div>
 
-    <div><img class="growth-hr" :src="require(`~/assets/hr.png`)" /></div>
+    <div><img class="growth-hr" :src="require(`~/assets/hr.png`)" alt="" /></div>
 
   <div class="growth-container">
 

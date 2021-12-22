@@ -115,6 +115,7 @@ export default {
           display: true, // タイトルを表示する
           text: '❁ １歳までの成長曲線 ❁', // タイトルのテキスト
           fontSize: 24,
+          fontColor: 'rgb(126, 96, 103',
         },
       },
     }
@@ -131,6 +132,6 @@ export default {
 
 <style>
 .color {
-  color: rgb(43, 70, 119);
+  color: rgb(126, 96, 103);
 }
 </style>

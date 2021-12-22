@@ -2,7 +2,7 @@
 <div class="container">
   <div class=" diary-title">Baby Diary</div>
 
-  <div><img class="diary-hr" :src="require(`~/assets/hr.png`)" /></div>
+  <div><img class="diary-hr" :src="require(`~/assets/hr.png`)" alt="" /></div>
 
   <i class="fab fa-twitter"></i>
   <div class="flame-diary">
@@ -19,14 +19,15 @@
         <ul class="snsbtniti">
           <!-- Twitterリンク -->
           <li><a  href="https://twitter.com/share?url=https://haniwaman.com/original-share-btn/&text=『３歳以下の子供に使える子育てアプリ』" 
-           rel="nofollow" target="_blank" class="flowbtn6 fl_tw1"><img src="~/assets/000a.jpg" width="50px" height="50px" class="pic"></a></li>
+           rel="nofollow" target="_blank" class="flowbtn6 fl_tw1">
+           <img src="~/assets/000a.jpg" width="50px" height="50px" class="pic" alt="twitterアイコン"></a></li>
            <!-- LINEリンク -->
           <a href="//timeline.line.me/social-plugin/share?url=シェアするページのURL&text=『３歳以下の子供に使える子育てアプリ』" target="_blank" rel="nofollow noopener noreferrer">
-    <img src="~/assets/line.png" width="50px" height="50px" class="pic">
+          <img src="~/assets/line.png" width="50px" height="50px" class="pic" alt="LINEアイコン">
 </a>
           <!-- FaceBookリンク -->
           <li><a class="js-sns-link" href="//www.facebook.com/sharer/sharer.php?u=&t=『３歳以下の子供に使える子育てアプリ』" target="_blank" rel="nofollow noopener noreferrer">
-          <img src="~/assets/fa.jpg" width="50px" height="50px" class="pic"></a></li>
+          <img src="~/assets/fa.jpg" width="50px" height="50px" class="pic" alt="FaceBookアイコン"></a></li>
         </ul>
      <div class="m-3">
     <button @click="add">
@@ -35,13 +36,14 @@
   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7H5a2 2 0 00-2 2v9a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2h-3m-1 4l-3 3m0 0l-3-3m3 3V4" />
 </svg>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
 投稿</div></button>
+
 <div class=" diary-title">Baby Diarys</div>
   <div class="containers">
 <div v-for="item in lastdata" :key="item.index" class="item">
 <div class="date">{{item.diarydate}}</div><br>
 {{item.message}}<br>
 <div v-if="item.img">
- <img :src="item.img" width="300px" height="300px">
+ <img :src="item.img" width="300px" height="300px" alt="思い出写真">
  </div>
  <div v-if="!item.img"> 
     <img src="~/assets/noimage.png" width="300px" height="300px" class="pic">
@@ -55,7 +57,7 @@
 </div>
 </template>
 
-<script  src = " /dist/vue-social-sharing.js "></script>
+<script src = " /dist/vue-social-sharing.js "></script>
 <script SRC = "https://unpkg.com/vue-social-sharing@3.0.8/dist/vue-social-sharing.js" >
 
 </script>
