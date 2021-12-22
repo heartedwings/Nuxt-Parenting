@@ -8,7 +8,7 @@
         rows="5"
         name="Memo"
         placeholder=" メモ"
-        maxlength="500"
+        maxlength="150"
       />
       <p>{{ message.length }}/500 文字</p>
 
@@ -33,5 +33,7 @@ export default {
 <style>
 .textarea {
   border: 1px solid rgb(179, 161, 161);
+  width: 80%;
+  margin-top: 5%;
 }
 </style>

@@ -20,7 +20,7 @@
             type="radio"
             value="母乳"
           />
-          <label for="titi" class="back">母乳</label>
+          <label for="titi">母乳</label>
           <input
             id="milk"
             v-model="kinds"
@@ -99,9 +99,9 @@
           rows="5"
           name="Memo"
           placeholder=" タップしてテキストを入力"
-          maxlength="500"
+          maxlength="150"
         />
-        <p>{{ message.length }}/500 文字</p>
+        <p>{{ message.length }}/150 文字</p>
 
         <div>
           <div class="container"></div>
@@ -124,8 +124,7 @@
                     d="M8 7H5a2 2 0 00-2 2v9a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2h-3m-1 4l-3 3m0 0l-3-3m3 3V4"
                   />
                 </svg>
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;
-                &nbsp; &nbsp;&nbsp; 保存
+                <div class="save">保存</div>
               </div>
             </button>
           </div>
@@ -147,8 +146,8 @@
                     stroke-width="2"
                     d="M3 10h10a8 8 0 018 8v2M3 10l6 6m-6-6l6-6"
                   /></svg
-                >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                &nbsp; &nbsp;&nbsp; 戻る
+                >
+                <div class="back">戻る</div>
               </div>
             </button>
           </div>
@@ -219,6 +218,14 @@ export default {
 <style lang="scss">
 @import url('https://fonts.googleapis.com/css2?family=Gluten:wght@700&display=swap');
 
+.save {
+  text-align: center;
+  margin: 0 40% 0 auto;
+}
+.back {
+  text-align: center;
+  margin: 0 40% 0 auto;
+}
 .food-title {
   text-align: center;
   font-size: 200%;
@@ -404,7 +411,7 @@ export default {
   border-radius: 0;
   background: rgb(180, 98, 98);
   margin: 5% 0 5% 0;
-  width: 250px;
+  width: 200px;
   padding: 5px;
   border-radius: 30px;
   &:hover {

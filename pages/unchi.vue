@@ -59,7 +59,7 @@
             type="radio"
             value="かため"
           />
-          <label for="radio1" class="back">かため</label>
+          <label for="radio1">かため</label>
           <input
             id="radio2"
             v-model="shape"
@@ -97,9 +97,9 @@
           rows="5"
           name="Memo"
           placeholder="タップしてテキストを入力"
-          maxlength="500"
+          maxlength="150"
         />
-        <p>{{ unchimemo.length }}/500 文字</p>
+        <p>{{ unchimemo.length }}/150 文字</p>
 
         <div class="container">
           <div class="m-3">
@@ -121,7 +121,7 @@
                     d="M8 7H5a2 2 0 00-2 2v9a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2h-3m-1 4l-3 3m0 0l-3-3m3 3V4"
                   /></svg
                 ><a class="save"
-                  >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                  >
                   保存</a
                 >
               </div>
@@ -146,8 +146,9 @@
                     stroke-width="2"
                     d="M3 10h10a8 8 0 018 8v2M3 10l6 6m-6-6l6-6"
                   /></svg
-                >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                戻る
+                >
+                <a class="back"
+                  >戻る</a>
               </div>
             </button>
           </div>
@@ -239,7 +240,14 @@ export default {
 
 <style lang="scss">
 @import url('https://fonts.googleapis.com/css2?family=Gluten:wght@700&display=swap');
-
+.save {
+  text-align: center;
+  margin: 0 40% 0 auto;
+}
+.back {
+  text-align: center;
+  margin: 0 40% 0 auto;
+}
 .unchi-title {
   text-align: center;
   margin: 5% 0 5% 0;
@@ -434,6 +442,7 @@ input[type='radio']:checked + .radio-text-yellow:before {
 .form-main {
   margin-top: 2%;
   margin-bottom: 2%;
+  width: 80%;
 }
 .radio-folm {
   display: none;
@@ -456,8 +465,8 @@ input[type='radio']:checked + .radio-text-yellow:before {
   // border: 2px solid #000;
   border-radius: 0;
   background: rgb(180, 98, 98);
-  margin: 5% 0 5% 0;
-  width: 250px;
+  margin: 5% auto 5% auto;
+  width: 200px;
   padding: 5px;
   border-radius: 30px;
   &:hover {
@@ -469,4 +478,5 @@ input[type='radio']:checked + .radio-text-yellow:before {
 .val {
   color: #da3838;
 }
+
 </style>
