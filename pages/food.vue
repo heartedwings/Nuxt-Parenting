@@ -249,7 +249,7 @@ export default {
     font-size: 35px; /* アスタリスクの大きさ */
     font-weight: bold;
     left: 20%;
-    top: 80%;
+    top: 98%;
     position: absolute;
     transform: rotate(20deg);
     -moz-transform: rotate(20deg);
@@ -275,7 +275,7 @@ export default {
     font-size: 40px; /* アスタリスクの大きさ */
     font-weight: bold;
     left: 75%;
-    top: 45%;
+    top: 65%;
     position: absolute;
     transform: rotate(20deg);
     -moz-transform: rotate(20deg);

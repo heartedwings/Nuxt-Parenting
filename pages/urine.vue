@@ -125,7 +125,7 @@ created(){
     font-size: 35px; /* アスタリスクの大きさ */
     font-weight: bold;
     left: 20%;
-    top: 80%;
+    top: 78%;
     position: absolute;
     transform: rotate(20deg);
     -moz-transform: rotate(20deg);
@@ -150,8 +150,8 @@ created(){
     display: inline-block;
     font-size: 40px; /* アスタリスクの大きさ */
     font-weight: bold;
-    left: 75%;
-    top: 45%;
+    left: 77%;
+    top: 44%;
     position: absolute;
     transform: rotate(20deg);
     -moz-transform: rotate(20deg);

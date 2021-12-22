@@ -221,7 +221,7 @@ export default {
     display: inline-block;
     font-size: 35px; /* アスタリスクの大きさ */
     font-weight: bold;
-    left: 20%;
+    left: 16%;
     top: 80%;
     position: absolute;
     transform: rotate(20deg);
@@ -247,7 +247,7 @@ export default {
     display: inline-block;
     font-size: 40px; /* アスタリスクの大きさ */
     font-weight: bold;
-    left: 75%;
+    left: 80%;
     top: 45%;
     position: absolute;
     transform: rotate(20deg);

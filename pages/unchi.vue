@@ -269,8 +269,8 @@ export default {
     display: inline-block;
     font-size: 35px; /* アスタリスクの大きさ */
     font-weight: bold;
-    left: 20%;
-    top: 80%;
+    left: 18%;
+    top: 88%;
     position: absolute;
     transform: rotate(20deg);
     -moz-transform: rotate(20deg);
@@ -296,7 +296,7 @@ export default {
     font-size: 40px; /* アスタリスクの大きさ */
     font-weight: bold;
     left: 75%;
-    top: 45%;
+    top: 62%;
     position: absolute;
     transform: rotate(20deg);
     -moz-transform: rotate(20deg);
@@ -440,9 +440,9 @@ input[type='radio']:checked + .radio-text-yellow:before {
 
 /* 形のボタン */
 .form-main {
-  margin-top: 2%;
-  margin-bottom: 2%;
+  margin: 2% auto 2% auto;
   width: 80%;
+  text-align: center;
 }
 .radio-folm {
   display: none;
