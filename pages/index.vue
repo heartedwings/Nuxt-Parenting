@@ -31,7 +31,6 @@
 </template>
 
 <script>
-import { mapGetters } from 'vuex'
 import UnchiData from '~/components/UnchiData'
 import UrineData from '~/components/UrineData'
 import FoodData from '~/components/FoodData'
@@ -50,12 +49,6 @@ export default {
     }
   },
 
-  computed: {
-    user() {
-      return this.$store.getters.user
-    },
-    ...mapGetters(['getAllData']),
-  },
   mounted() {
     this.$store.dispatch('nuxtClientInit')
   },
@@ -147,10 +140,6 @@ $button-opacity: 0.8;
   height: $height;
 }
 
-.sample {
-  color: rgb(65, 40, 40);
-}
-
 .home-title {
   text-align: center;
   font-size: 200%;
@@ -162,21 +151,8 @@ $button-opacity: 0.8;
 .home-hr {
   width: 40%;
   margin: -5% auto 5% auto;
-  // text-align: center;
 }
 
-.link {
-  text-align: center;
-  margin-top: 5%;
-  margin-bottom: 10%;
-}
-.memo-container {
-  text-align: center;
-  margin: 5%;
-}
-.icon-img {
-  width: 20%;
-}
 
 .hw-button1 {
   @include button-style();
