@@ -1,71 +1,88 @@
 <template>
   <div class="profileImg">
     <no-ssr>
-    <div class="profile-title">PROFILE</div>
+      <div class="profile-title">PROFILE</div>
 
-      <div><img class="profile-hr" :src="require(`~/assets/hr.png`)" /></div>
-      
       <div>
-        <img :src="FinalproImg2" />
+        <img class="profile-hr" :src="require(`~/assets/hr.png`)" alt="" />
       </div>
 
-    <div class="profile-container">
-      <div class="profile-main">
-        <div
-          v-for="userItemName in FinalMainData.babyname"
-          :key="userItemName.index"
-        >
-          名前
-          <div>{{ userItemName }}</div>
-        </div>
+      <div>
+        <img class="proImg" :src="FinalproImg2" alt="プロフィール画像" />
+      </div>
 
-        <div
-          v-for="userItemGender in FinalMainData.gender"
-          :key="userItemGender.index"
-        >
-          性別
-          <div>{{ userItemGender }}</div>
-        </div>
+      <div class="profile-container">
+        <div class="profile-main">
+          <div
+            v-for="userItemName in FinalMainData.babyname"
+            :key="userItemName.index"
+            class="allProData"
+          >
+            <div class="proData">名前</div>
+            <div>{{ userItemName }}</div>
+          </div>
 
-        <div
-          v-for="userItemBirth in FinalMainData.birth"
-          :key="userItemBirth.index"
-        >
-          生年月日
-          <div>{{ userItemBirth }}</div>
-        </div>
+          <div
+            v-for="userItemGender in FinalMainData.gender"
+            :key="userItemGender.index"
+            class="allProData"
+          >
+            <div class="proData">性別</div>
+            <div>{{ userItemGender }}</div>
+          </div>
 
-        <div
-          v-for="userItemHeight in FinalMainData.height"
-          :key="userItemHeight.index"
-        >
-          身長 :
-          <div>{{ userItemHeight }} cm</div>
-        </div>
+          <div
+            v-for="userItemBirth in FinalMainData.birthday"
+            :key="userItemBirth.index"
+            class="allProData"
+          >
+            <div class="proData">生年月日</div>
+            <div>{{ userItemBirth }}</div>
+          </div>
 
-        <div
-          v-for="userItemWeight in FinalMainData.weight"
-          :key="userItemWeight.index"
-        >
-          体重 :
-          <div>{{ userItemWeight }} g</div>
+          <div
+            v-for="userItemHeight in FinalMainData.height"
+            :key="userItemHeight.index"
+            class="allProData"
+          >
+            <div class="proData">身長</div>
+            <div>{{ userItemHeight }} cm</div>
+          </div>
+
+          <div
+            v-for="userItemWeight in FinalMainData.weight"
+            :key="userItemWeight.index"
+            class="allProData"
+          >
+            <div class="proData">体重</div>
+            <div>{{ userItemWeight }} g</div>
+          </div>
         </div>
       </div>
-    </div>
 
-    <div class="allergy-nav">
-      アレルギー
-      <div v-for="allergyI in FinalImg" :key="allergyI.index" class="container2">
-        <div v-for="i in allergyI.newallergy" :key="i.index" class="container2">
-          <img :src="i" width="60px" height="60px" />
+      <div class="allergy-nav">
+        <span class="allergy-circle1">ア</span>
+        <span class="allergy-circle2">ル</span>
+        <span class="allergy-circle3">ー</span>
+        <div
+          v-for="allergyI in FinalImg"
+          :key="allergyI.index"
+          class="container2"
+        >
+          <div
+            v-for="i in allergyI.newallergy"
+            :key="i.index"
+            class="container2"
+          >
+            <img :src="i" width="60px" height="60px" alt="アレルギー画像" />
+          </div>
         </div>
       </div>
-    </div>
-
     </no-ssr>
-
   </div>
 </template>
+
+<script src="https://cdn.jsdelivr.net/npm/lazyload@2.0.0-rc.2/lazyload.min.js"></script>
 
 <script>
 import { mapGetters } from 'vuex'
@@ -213,14 +230,111 @@ export default {
 }
 
 .allergy-nav {
-  text-align: center;
-  margin-top: 5%;
-  margin-bottom: 10%;
+  margin-top: 15%;
+  margin-bottom: 15%;
   font-size: 20px;
+  background: rgba(252, 237, 206, 0.61);
+  padding: 30px;
+  border-radius: 10px;
+}
+.allergy-circle1 {
+  font-size: 20px;
+  line-height: 2.0;
+  position: absolute;
+  margin-top: -50px;
+  font-weight: bold;
+  color: #fff;
+  background-color: #ffa726;
+  border-radius: 50%;
+  text-align: center;
+  width: 40px;
+  height: 40px;
+  &::after {
+    content: 'レ';
+    position: absolute;
+    margin-top: 0.4em;
+    font-weight: bold;
+    color: #fff;
+    background-color: #ffa726;
+    border-radius: 50%;
+    text-align: center;
+    width: 40px;
+    height: 40px;
+  }
+}
+.allergy-circle2 {
+  position: absolute;
+  font-size: 20px;
+  line-height: 2.0;
+  margin-top: -50px;
+  margin-left: 60px;
+  font-weight: bold;
+  color: #fff;
+  background-color: #ffa726;
+  border-radius: 50%;
+  text-align: center;
+  width: 40px;
+  height: 40px;
+  &::before {
+    content: '';
+    position: absolute;
+    top: 100%;
+    margin-left: -16px;
+    border: 5px solid transparent;
+    border-top: 14px solid #ffa726;
+    -ms-transform: rotate(-20deg);
+    -webkit-transform: rotate(-20deg);
+    transform: rotate(-25deg);
+  }
+  &::after {
+    content: 'ギ';
+    position: absolute;
+    margin-top: 0.2em;
+    font-weight: bold;
+    color: #fff;
+    background-color: #ffa726;
+    border-radius: 50%;
+    text-align: center;
+    width: 40px;
+    height: 40px;
+  }
+}
+.allergy-circle3 {
+  position: absolute;
+  font-size: 20px;
+  line-height: 2.0;
+  margin-top: -50px;
+  margin-left: 120px;
+  font-weight: bold;
+  color: #fff;
+  background-color: #ffa726;
+  border-radius: 50%;
+  text-align: center;
+  width: 40px;
+  height: 40px;
 }
 
 .proImg {
-  width: 200px;
+  width: 250px;
   margin: 0 auto 0 auto;
+}
+.allProData {
+  margin-bottom: 5%;
+}
+
+.proData {
+  font-weight: 900;
+  color: rgb(197, 78, 70);
+  border-bottom: solid 3px rgb(214, 164, 162);
+  width: 50%;
+  margin: 0 auto 3% auto;
+
+  &::after {
+    position: absolute;
+    display: block;
+    content: '';
+    border-bottom: solid 3px rgb(197, 78, 70);
+    width: 5%;
+  }
 }
 </style>

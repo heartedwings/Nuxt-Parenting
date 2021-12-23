@@ -2,7 +2,7 @@
   <div class="unchi-main">
     <div class="unchi-title">UNCHI PAGE</div>
 
-    <div><img class="unchi-hr" :src="require(`~/assets/hr.png`)" /></div>
+    <div><img class="unchi-hr" :src="require(`~/assets/hr.png`)" alt="" /></div>
 
     <div class="unchi-container">
       <div class="flame-unchi">
@@ -59,7 +59,7 @@
             type="radio"
             value="かため"
           />
-          <label for="radio1" class="back">かため</label>
+          <label for="radio1">かため</label>
           <input
             id="radio2"
             v-model="shape"
@@ -97,9 +97,9 @@
           rows="5"
           name="Memo"
           placeholder="タップしてテキストを入力"
-          maxlength="500"
+          maxlength="150"
         />
-        <p>{{ unchimemo.length }}/500 文字</p>
+        <p>{{ unchimemo.length }}/150 文字</p>
 
         <div class="container">
           <div class="m-3">
@@ -121,7 +121,7 @@
                     d="M8 7H5a2 2 0 00-2 2v9a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2h-3m-1 4l-3 3m0 0l-3-3m3 3V4"
                   /></svg
                 ><a class="save"
-                  >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                  >
                   保存</a
                 >
               </div>
@@ -146,8 +146,9 @@
                     stroke-width="2"
                     d="M3 10h10a8 8 0 018 8v2M3 10l6 6m-6-6l6-6"
                   /></svg
-                >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                戻る
+                >
+                <a class="back"
+                  >戻る</a>
               </div>
             </button>
           </div>
@@ -239,7 +240,14 @@ export default {
 
 <style lang="scss">
 @import url('https://fonts.googleapis.com/css2?family=Gluten:wght@700&display=swap');
-
+.save {
+  text-align: center;
+  margin: 0 40% 0 auto;
+}
+.back {
+  text-align: center;
+  margin: 0 40% 0 auto;
+}
 .unchi-title {
   text-align: center;
   margin: 5% 0 5% 0;
@@ -261,8 +269,8 @@ export default {
     display: inline-block;
     font-size: 35px; /* アスタリスクの大きさ */
     font-weight: bold;
-    left: 20%;
-    top: 80%;
+    left: 18%;
+    top: 88%;
     position: absolute;
     transform: rotate(20deg);
     -moz-transform: rotate(20deg);
@@ -277,7 +285,7 @@ export default {
   margin: 0 auto 3% auto;
   background-color: #fff2f2e5;
   padding: 5%;
-  width: 70%;
+  width: 80%;
   border-left: 5px dotted rgba(0, 0, 0, 0.1);
   box-shadow: 0 0 0 5px #fff2f2e5;
 
@@ -288,7 +296,7 @@ export default {
     font-size: 40px; /* アスタリスクの大きさ */
     font-weight: bold;
     left: 75%;
-    top: 45%;
+    top: 62%;
     position: absolute;
     transform: rotate(20deg);
     -moz-transform: rotate(20deg);
@@ -432,8 +440,9 @@ input[type='radio']:checked + .radio-text-yellow:before {
 
 /* 形のボタン */
 .form-main {
-  margin-top: 2%;
-  margin-bottom: 2%;
+  margin: 2% auto 2% auto;
+  width: 80%;
+  text-align: center;
 }
 .radio-folm {
   display: none;
@@ -456,8 +465,8 @@ input[type='radio']:checked + .radio-text-yellow:before {
   // border: 2px solid #000;
   border-radius: 0;
   background: rgb(180, 98, 98);
-  margin: 5% 0 5% 0;
-  width: 250px;
+  margin: 5% auto 5% auto;
+  width: 200px;
   padding: 5px;
   border-radius: 30px;
   &:hover {
@@ -469,4 +478,5 @@ input[type='radio']:checked + .radio-text-yellow:before {
 .val {
   color: #da3838;
 }
+
 </style>

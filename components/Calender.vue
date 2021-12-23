@@ -291,8 +291,6 @@ export default {
     },
   },
 
-
-  methods: {},
 }
 </script>
 
@@ -322,31 +320,41 @@ $fc-width: 80%;
 
 .calender {
   margin: 5% auto 5% auto;
+  width: 90%;
 }
 .fc {
-  color: rgb(43, 1, 5);
+  color: rgb(121, 29, 38);
   width: $fc-width;
   margin: 5% auto 5% auto;
-  background-color: #976f6f;
+  background-color: #ad8787;
   padding: 3%;
   border-radius: 5%;
 
   .fc-header-toolbar {
     border-bottom: 5px #d6b2b2 dotted;
     flex-shrink: 0;
+    top: 5%;
   }
+
   .fc-toolbar-title {
     font-size: 200%;
-    padding: 5px 10px 0px;
+    padding: 0 5% 0 5%;
     color: rgb(247, 225, 227);
     text-align: center;
     font-family: 'Righteous', cursive;
+    margin-bottom: 5%;
   }
-  .fc-toolbar-chunk {
-    margin: 1%;
+  .fc-header-toolbar {
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
   }
   .fc-button-group {
+    justify-content: center;
     flex-shrink: 0;
+  }
+  .fc-toolbar-chunk {
+    margin-bottom: 3%;
   }
 
   .fc-prev-button {
@@ -437,5 +445,12 @@ td {
 
 .fc-dayGridMonth-view .fc-event-time {
   display: none;
+}
+
+.fc-daygrid-event-dot {
+  display: none;
+}
+.fc-daygrid-day-events {
+  text-align: center;
 }
 </style>

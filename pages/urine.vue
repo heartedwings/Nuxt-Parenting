@@ -2,7 +2,7 @@
   <div class="urine-main">
     <div class="urine-title">URINE PAGE</div>
 
-    <div><img class="urine-hr" :src="require(`~/assets/hr.png`)" /></div>
+    <div><img class="urine-hr" :src="require(`~/assets/hr.png`)" alt="" /></div>
 
     <div class="urine-container">
       <div class="flame-urine">
@@ -17,9 +17,9 @@
         rows="5"
         name="Memo"
         placeholder="タップしてテキストを入力"
-        maxlength="500"
+        maxlength="150"
       />
-      <p>{{ urinememo.length }}/500 文字</p>
+      <p>{{ urinememo.length }}/150 文字</p>
       <div>
         </div>
               <div class="container">
@@ -29,15 +29,15 @@
       <div class="button">
       <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" width="30px" height="30px">
   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7H5a2 2 0 00-2 2v9a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2h-3m-1 4l-3 3m0 0l-3-3m3 3V4" />
-</svg>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
-保存</div></button></div>
+</svg>
+<div class="save">保存</div></div></button></div>
         <div class="m-3">
     <button  @click="back">
       <div class="button">
       <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" width="30px" height="30px">
   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h10a8 8 0 018 8v2M3 10l6 6m-6-6l6-6" />
-</svg>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
-戻る</div></button></div>
+</svg>
+<div class="back">戻る</div></div></button></div>
       </div>
     </div>
   </div>
@@ -95,6 +95,14 @@ created(){
 <style lang="scss">
 @import url('https://fonts.googleapis.com/css2?family=Gluten:wght@700&display=swap');
 
+.save {
+  text-align: center;
+  margin: 0 40% 0 auto;
+}
+.back {
+  text-align: center;
+  margin: 0 40% 0 auto;
+}
 .urine-title {
   text-align: center;
   font-size: 200%;
@@ -117,7 +125,7 @@ created(){
     font-size: 35px; /* アスタリスクの大きさ */
     font-weight: bold;
     left: 20%;
-    top: 80%;
+    top: 78%;
     position: absolute;
     transform: rotate(20deg);
     -moz-transform: rotate(20deg);
@@ -132,7 +140,7 @@ created(){
   margin: 0 auto 3% auto;
   background-color: #fff2f2e5;
   padding: 5%;
-  width: 70%;
+  width: 80%;
   border-left: 5px dotted rgba(0, 0, 0, 0.1);
   box-shadow: 0 0 0 5px #fff2f2e5;
 
@@ -142,8 +150,8 @@ created(){
     display: inline-block;
     font-size: 40px; /* アスタリスクの大きさ */
     font-weight: bold;
-    left: 75%;
-    top: 45%;
+    left: 77%;
+    top: 44%;
     position: absolute;
     transform: rotate(20deg);
     -moz-transform: rotate(20deg);
@@ -168,7 +176,7 @@ created(){
   border-radius: 0;
    background:rgb(180, 98, 98);
   margin: 5% 0 5% 0;
-    width: 250px;
+    width: 200px;
     padding: 5px;
     border-radius:30px;
   &:hover {

@@ -2,7 +2,7 @@
   <div>
     <div class="graph-title">GRAPH</div>
 
-    <div><img class="graph-hr" :src="require(`~/assets/hr.png`)" /></div>
+    <div><img class="graph-hr" :src="require(`~/assets/hr.png`)" alt="" /></div>
 
     <div class="hw-button-frame">
       <button class="hw-button1" @click="active1">0歳1ヶ月 ~ 1歳</button>
@@ -11,7 +11,7 @@
     </div>
 
     <div class="chart">
-      <div v-if="isActive">
+      <div v-if="isActive" class="chart123">
         <Chart
           :options="chartData"
           :lists1="heightLists1"
@@ -19,14 +19,14 @@
           height="500"
         />
       </div>
-      <div v-if="isActive2">
+      <div v-if="isActive2" class="chart123">
         <Chart2
           :options="chartData"
           :lists2="heightLists2"
           :lists22="weightLists2"
         />
       </div>
-      <div v-if="isActive3">
+      <div v-if="isActive3" class3="chart123" >
         <Chart3
           :options="chartData"
           :lists3="heightLists3"
@@ -776,5 +776,10 @@ $button-opacity: 0.8;
   width: 80%;
   margin: 5% auto 5% auto;
   padding: 5% auto 5% auto;
+}
+
+.chart123 {
+  margin-top: 10%;
+  margin-bottom: 10%;
 }
 </style>

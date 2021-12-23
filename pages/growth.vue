@@ -2,7 +2,7 @@
   <div class="growth">
     <div class="growth-title">GROWTH PAGE</div>
 
-    <div><img class="growth-hr" :src="require(`~/assets/hr.png`)" /></div>
+    <div><img class="growth-hr" :src="require(`~/assets/hr.png`)" alt="" /></div>
 
   <div class="growth-container">
 
@@ -258,8 +258,8 @@ console.log(this.$store.state.UserInfo)
     display: inline-block;
     font-size: 35px; /* アスタリスクの大きさ */
     font-weight: bold;
-    left: 20%;
-    top: 90%;
+    left: 16%;
+    top: 88%;
     position: absolute;
     transform: rotate(20deg);
     -moz-transform: rotate(20deg);
@@ -283,8 +283,8 @@ console.log(this.$store.state.UserInfo)
     display: inline-block;
     font-size: 40px; /* アスタリスクの大きさ */
     font-weight: bold;
-    left: 75%;
-    top: 45%;
+    left: 77%;
+    top: 47%;
     position: absolute;
     transform: rotate(20deg);
     -moz-transform: rotate(20deg);
@@ -301,15 +301,15 @@ console.log(this.$store.state.UserInfo)
     display: inline-block;
     font-size: 35px; /* アスタリスクの大きさ */
     font-weight: bold;
-    left: 20%;
-    top: 90%;
+    left: 14%;
+    top: 158%;
     position: absolute;
     transform: rotate(20deg);
     -moz-transform: rotate(20deg);
     -webkit-transform: rotate(20deg);
     -o-transform: rotate(20deg);
-    text-shadow: 0px 0px 6px #fff2f2e5, 0px 0px 10px #fff6f9, 0 0 10px #e4c2ce; /* アスタリスク周りの影 */
-    transform: rotate(45deg);
+    text-shadow: 0px 0px 6px #cec7f3e5, 0px 0px 10px #f6f6ff, 0 0 10px #f4f2ffe5; /* アスタリスク周りの影 */
+    transform: rotate(30deg);
   }
 }
 .flame-growth2 {
@@ -327,13 +327,13 @@ console.log(this.$store.state.UserInfo)
     font-size: 40px; /* アスタリスクの大きさ */
     font-weight: bold;
     left: 75%;
-    top: 45%;
+    top: 131%;
     position: absolute;
     transform: rotate(20deg);
     -moz-transform: rotate(20deg);
     -webkit-transform: rotate(20deg);
     -o-transform: rotate(20deg);
-    text-shadow: 0px 0px 6px #fff2f2e5, 0px 0px 10px #fff6f9, 0 0 10px #e4c2ce; /* アスタリスク周りの影 */
+    text-shadow: 0px 0px 6px #cec7f3e5, 0px 0px 10px #f6f6ff, 0 0 10px #f4f2ffe5; /* アスタリスク周りの影 */
   }
 }
 
