@@ -150,6 +150,7 @@ $button-opacity: 0.8;
 }
 .home-hr {
   width: 40%;
+  height: 100%;
   margin: -5% auto 5% auto;
 }
 
