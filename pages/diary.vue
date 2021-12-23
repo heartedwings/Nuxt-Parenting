@@ -1,12 +1,13 @@
 <template >
 <div class="container">
+  <no-ssr>
   <div class=" diary-title">Baby Diary</div>
 
   <div><img class="diary-hr" :src="require(`~/assets/hr.png`)" alt="" /></div>
 
   <i class="fab fa-twitter"></i>
   <div class="flame-diary">
-        <div class="diary-flower" />
+        <div class="diary-flower"/>
  <div class="drop_area">
    日時：<input  v-model="diary.date" type="date"> <br><i class="fab fa-facebook-f"></i>
        <textarea
@@ -39,7 +40,7 @@
 
 <div class=" diary-title">Baby Diarys</div>
   <div class="containers">
-<div v-for="item in lastdata" :key="item.index" class="item">
+<div v-for="item in this.getUser.diary" :key="item.index" class="item">
 <div class="date">{{item.diarydate}}</div><br>
 {{item.message}}<br>
 <div v-if="item.img">
@@ -54,25 +55,17 @@
   </div>
   </div>
 </div>
+</no-ssr>
 </div>
 </template>
-
-<script src = " /dist/vue-social-sharing.js "></script>
-<script SRC = "https://unpkg.com/vue-social-sharing@3.0.8/dist/vue-social-sharing.js" >
-
-</script>
 <script>
 import Vue from 'vue'
-import { mapActions } from 'vuex'
-import VueSocialSharing from 'vue-social-sharing'
-import { ShareNetwork } from '../node_modules/vue-social-sharing/dist/vue-social-sharing'
+import { mapActions, mapGetters } from 'vuex'
 import firebase from '~/plugins/firebase'
 import 'firebase/storage'
 
 const db = firebase.firestore()
 const UserRef = db.collection(`User`)
-
-Vue.use(VueSocialSharing)
 
 export default {
   data() {
@@ -85,32 +78,36 @@ export default {
   head: {
     title: '思い出',
   },
+    computed: {
+    ...mapGetters(['getUser']),
+  },
   created() {
-  //データ表示
-  UserRef.get().then((querySnapshot) => {
-  console.log(querySnapshot)
+  // データ表示
+  console.log(this.$store.state.UserInfo)
+  db.collection(`User`)
+  .get().then((querySnapshot) => {
   querySnapshot.forEach((doc) => {
     this.data = doc.data().diary
-    console.log(this.data)
     const newdata= this.data
-    const newnewnewdata=[]
+    console.log(this.data)
+    // const newnewnewdata=[]
 
-    const newdata1 = JSON.stringify(newdata)
+    // const newdata1 = JSON.stringify(newdata)
 
-    let newdata2 = []
-    if (newdata1) {
-        newdata2 = JSON.parse(newdata1)
+    // let newdata2 = []
+    // if (newdata1) {
+    //     newdata2 = JSON.parse(newdata1)
   
-     const datadata= newnewnewdata.concat(newdata2)
+    //  const datadata= newnewnewdata.concat(newdata2)
   
-     this.lastdata=datadata
-      console.log(this.lastdata)
-      }
+    //  this.lastdata=datadata
+    //   console.log(this.lastdata)
+    //   }
 
     const diarys= {
-      img: data.img ? data.img : '/noimage.png',
-      diarydate: data.diarydate? data.diarydate : '',
-      message: data.message ? data.message : 0,
+      img: this.data.img ? this.data.img : '/noimage.png',
+      diarydate: this.data.diarydate? this.data.diarydate : '',
+      message: this.data.message ? this.data.message : 0,
     }
     console.log(diarys)
     this.diary.push(diarys)
@@ -118,7 +115,7 @@ export default {
 })
     },
   methods: {
-    //firebaseへ追加処理
+    // firebaseへ追加処理
     add() {
       if(this.$store.state.UserInfo){
         confirm(`この内容で登録をしてもよろしいでしょうか`)
@@ -140,7 +137,7 @@ export default {
         })
       }
     },
-    //画像のパス取得&storageへアクセスし保存
+    // 画像のパス取得&storageへアクセスし保存
     upload(e) {
       const file = e.target.files[0]
       console.log(file)
@@ -163,7 +160,7 @@ export default {
   },
   clear(i) {
       if (this.$store.state.UserInfo) {
-          alert(`消去しますか？`)
+          confirm(`消去しますか？`)
           const diarysD = {
             diaryList: i,
             UserInfo: this.$store.state.UserInfo,
@@ -358,9 +355,6 @@ overflow:hidden;
 /* LINE@ */
 .fl_li6{
 background:#00c300;			
-}
-.pic{
-  border-radius:20%;
 }
 .picture{
   margin: 5% 0 5% 0;
