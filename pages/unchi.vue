@@ -93,7 +93,7 @@
         <textarea
           v-model="unchimemo"
           class="textarea"
-          cols="30"
+          cols="25"
           rows="5"
           name="Memo"
           placeholder="タップしてテキストを入力"
@@ -240,6 +240,12 @@ export default {
 
 <style lang="scss">
 @import url('https://fonts.googleapis.com/css2?family=Gluten:wght@700&display=swap');
+input[type=”text”] {
+  font-size: 16px;
+  transform: scale(0.8);
+}
+
+
 .save {
   text-align: center;
   margin: 0 40% 0 auto;
@@ -248,6 +254,12 @@ export default {
   text-align: center;
   margin: 0 40% 0 auto;
 }
+.textarea {
+  width:80%;
+  height:30%;
+  margin-top: 3%;
+}
+
 .unchi-title {
   text-align: center;
   margin: 5% 0 5% 0;

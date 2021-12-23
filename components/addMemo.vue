@@ -31,9 +31,9 @@ export default {
 </script>
 
 <style>
-.textarea {
+/* .textarea {
   border: 1px solid rgb(179, 161, 161);
   width: 80%;
   margin-top: 5%;
-}
+} */
 </style>

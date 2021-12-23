@@ -453,4 +453,10 @@ td {
 .fc-daygrid-day-events {
   text-align: center;
 }
+// .fc-button-group {
+//   @include bar-style();
+// }
+.fc-button-primary {
+   @include bar-style();
+}
 </style>
