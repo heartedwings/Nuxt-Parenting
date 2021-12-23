@@ -368,4 +368,11 @@ background:#00c300;
 .date{
   font-weight: bold;
 }
+
+.textarea {
+  width:80%;
+  height:30%;
+  margin-top: 3%;
+  margin-bottom: 3%;
+}
 </style>

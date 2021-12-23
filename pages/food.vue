@@ -419,4 +419,10 @@ export default {
     background: rgb(177, 90, 90);
   }
 }
+
+.textarea {
+  width:80%;
+  height:30%;
+  margin-top: 3%;
+}
 </style>

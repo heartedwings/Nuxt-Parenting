@@ -255,7 +255,7 @@ input[type=”text”] {
   margin: 0 40% 0 auto;
 }
 .textarea {
-  width:70%;
+  width:80%;
   height:30%;
   margin-top: 3%;
 }
