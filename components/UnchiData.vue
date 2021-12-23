@@ -78,7 +78,7 @@ export default {
 }
 </script>
 
- <style lang="scss">
+<style lang="scss">
 .unchiD {
   text-align: center;
   margin-left: auto;
@@ -128,4 +128,5 @@ export default {
   margin-bottom: -1%;
   font-weight: 700;
 }
+
 </style>
