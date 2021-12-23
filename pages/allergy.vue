@@ -8,7 +8,7 @@
 
     <div class="box_sample03">
       <div class="container">
-        <div class="includeImg" v-for="item in foodduty" :key="item.foodname">
+        <div v-for="item in foodduty" :key="item.foodname" class="includeImg" >
           <img
             :src="require(`~/assets/` + item.icon)"
             width="60px"
@@ -55,6 +55,7 @@
 <script>
 import { mapActions } from 'vuex'
 
+
 export default {
   data() {
     return {
@@ -94,6 +95,7 @@ export default {
   },
   created() {
     console.log(this.$store.state.Users)
+
   },
   methods: {
     addAllergy() {

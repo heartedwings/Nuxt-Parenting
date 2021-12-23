@@ -3,11 +3,12 @@
   <no-ssr>
   <div class=" diary-title">Baby Diary</div>
 
-  <div><img class="diary-hr" :src="require(`~/assets/hr.png`)" alt="" /></div>
+  <div><img class="diary-hr" :src="require(`~/assets/hr.png`)" alt="" width="400%" height="30px"></div>
 
   <i class="fab fa-twitter"></i>
   <div class="flame-diary">
         <div class="diary-flower"/>
+
  <div class="drop_area">
    日時：<input  v-model="diary.date" type="date"> <br><i class="fab fa-facebook-f"></i>
        <textarea
@@ -21,7 +22,7 @@
           <!-- Twitterリンク -->
           <li><a  href="https://twitter.com/share?url=https://nuxt-parenting.web.app/&text=『３歳以下の子供に使える子育てアプリ』" 
            rel="nofollow" target="_blank" class="flowbtn6 fl_tw1">
-           <img src="~/assets/000a.jpg" width="50px" height="50px" class="pic" alt="twitterアイコン"></a></li>
+           <img src="~/assets/twitter.jpg" width="50px" height="50px" class="pic" alt="twitterアイコン"></a></li>
            <!-- LINEリンク -->
           <a href="//timeline.line.me/social-plugin/share?url=https://nuxt-parenting.web.app/&text=『３歳以下の子供に使える子育てアプリ』" target="_blank" rel="nofollow noopener noreferrer">
           <img src="~/assets/line.png" width="50px" height="50px" class="pic" alt="LINEアイコン">
@@ -40,7 +41,7 @@
 
 <div class=" diary-title">Baby Diarys</div>
   <div class="containers">
-<div v-for="item in this.getUser.diary" :key="item.index" class="item">
+<div v-for="item in getUser.diary" :key="item.index" class="item">
 <div class="date">{{item.diarydate}}</div><br>
 {{item.message}}<br>
 <div v-if="item.img">
@@ -90,20 +91,7 @@ export default {
     this.data = doc.data().diary
     const newdata= this.data
     console.log(this.data)
-    // const newnewnewdata=[]
-
-    // const newdata1 = JSON.stringify(newdata)
-
-    // let newdata2 = []
-    // if (newdata1) {
-    //     newdata2 = JSON.parse(newdata1)
   
-    //  const datadata= newnewnewdata.concat(newdata2)
-  
-    //  this.lastdata=datadata
-    //   console.log(this.lastdata)
-    //   }
-
     const diarys= {
       img: this.data.img ? this.data.img : '/noimage.png',
       diarydate: this.data.diarydate? this.data.diarydate : '',
@@ -133,9 +121,10 @@ export default {
           this.diary.date= ''
           this.diary.message = ''
           this.diary.img = ''
-          // this.inputFileReset()
         })
-      }
+      }else {
+          alert(`ログインをしてください`)
+        }
     },
     // 画像のパス取得&storageへアクセスし保存
     upload(e) {
@@ -143,7 +132,6 @@ export default {
       console.log(file)
       if (!file.type.includes('image')) {
         this.errorMessage = '画像を指定してください'
-        // this.inputFileReset()
         return
       }
      firebase.storage().ref(file.name).put(file).then(() => {
@@ -165,7 +153,6 @@ export default {
             diaryList: i,
             UserInfo: this.$store.state.UserInfo,
           }
-      console.log(diarysD)
       this.deleteDiaryData(diarysD)
       }
     },
@@ -187,7 +174,6 @@ export default {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  // font-size: 20px;
 }
 .containers{
   display: flex;

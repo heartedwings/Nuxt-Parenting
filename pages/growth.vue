@@ -2,7 +2,7 @@
   <div class="growth">
     <div class="growth-title">GROWTH PAGE</div>
 
-    <div><img class="growth-hr" :src="require(`~/assets/hr.png`)" alt="" /></div>
+    <div><img class="growth-hr" :src="require(`~/assets/hr.png`)" alt="" width="40"></div>
 
   <div class="growth-container">
 
@@ -125,12 +125,8 @@
 
 <script>
 import { mapActions } from "vuex"
-// import DateTime from '../components/addDateTime'
 
 export default {
-  components: {
-    // DateTime,
-  },
   data() {
     return {
       height: [
@@ -247,8 +243,8 @@ console.log(this.$store.state.UserInfo)
 
 .growth-hr {
   width: 40%;
+  height: 200%;
   margin: -5% auto 5% auto;
-  // text-align: center;
 }
 
 .growth-flower {

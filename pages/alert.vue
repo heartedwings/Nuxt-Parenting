@@ -1,10 +1,11 @@
 <template>
   <div>
+      <no-ssr>
     <div class="timer-title">MILK TIMER</div>
     <div><img class="timer-hr" :src="require(`~/assets/hr.png`)" alt="" /></div>
       <div class="timer">
           <div class="countdown">MILK TIME COUNTDOWN</div><br/>
-          <!-- <progress id="myProgress" value="0" max="100">0%</progress> -->
+   
           <div class="container">
             <div class="m-3">
               <button  class="  w-12 h-12   bg-red-800   text-lg text-white   font-semibold rounded-full hover:bg-red-700 " @click="countup" >
@@ -67,7 +68,7 @@
     <div class="container">
       <div class="item">
           music1
-          <img src="~/assets/background-music.jpeg" width="100px" height="100px" alt="music1"/><br>
+  <img src="~/assets/background-music.jpeg" width="100px" height="100px" alt="music1"/><br>
            <div class="container">
                <div class="buttonn">
                    <button @click="komori1">
@@ -141,6 +142,7 @@
     </div>
     </div>
   </div>
+  </no-ssr>
   </div>
 </template>
 <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12"></script>
@@ -231,29 +233,11 @@ export default {
     },
     start() {
       const self = this // プログレスバーの進捗値
-    //   let  val // 一定間隔で処理を行うintervalのIDを保持
-    //   let  intervalID
-    //     val = 0;  // ボタンを無効にする(何回も押せないように)
-    // document.getElementById("myButton").disabled = true;
-    //    // 1msおきにプログレスバーを更新する
-    //   intervalID = setInterval("updateProgress()", 100);
       this.timerObj = setInterval(function () {
       self.count()
       }, 1000)
       this.timerOn = true // timerがONであることを保持
     },
-  // updateProgress() {
-  //   // プログレスバーの進捗値を更新し、プログレスバーに反映させる
-  //   val += 1;
-  //   document.getElementById("myProgress").value = val;
-  //   document.getElementById("myProgress").innerText = val + "%";
-  //   console.log("progress:", val, "%");
-  //   // 最大値まで達したら終了
-  //   if (val == 100) {
-  //     clearInterval(intervalID);
-  //     document.getElementById("myButton").disabled = false;
-  //   }
-  // },
     stop() {
       clearInterval(this.timerObj)
       this.timerOn = false
@@ -271,7 +255,7 @@ export default {
     musicstop() {
       const music = new Audio(sound)
       music.pause(sound)
-      console.log(`aa`)
+
       music.currentTime = 0;
       console.log(`pp`)
     },
@@ -344,10 +328,9 @@ export default {
   background-image: linear-gradient(180deg, rgba(209, 209, 209, 1), rgba(255, 255, 255, 1));
 }
 }
-
 .timer {
   width: 400px;
-  margin: auto;
+   margin: -5% auto 5% auto;
 }
 
 .timer-title {
@@ -360,7 +343,6 @@ export default {
 .timer-hr {
   width: 40%;
   margin: -5% auto 5% auto;
-  // text-align: center;
 }
 .countdown{
   text-align: center;
