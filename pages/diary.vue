@@ -353,29 +353,6 @@ background:-webkit-linear-gradient(135deg, #427eff 0%, #f13f79 70%) no-repeat;
 background:linear-gradient(135deg, #427eff 0%, #f13f79 70%) no-repeat;
 overflow:hidden;	
 }
-/* Instagramオレンジグラデ背景 */
-// .insta_btn6:before{
-// content: '';
-// position: absolute;
-// top:27px;
-// left:-12px;
-// width:59px;
-// height:40px;
-// background:-webkit-radial-gradient(#ffdb2c 7%, rgba(255, 105, 34, 0.3) 60%, rgba(255, 88, 96, 0) 70%);
-// background:radial-gradient(#ffdb2c 7%, rgba(255, 105, 34, 0.3) 60%, rgba(255, 88, 96, 0) 70%);
-// }
-/* Facebookアイコン位置 */
-.fl_fb6 .fa-facebook-f{
-// position:relative;
-// top:23px;
-// left:17px;
-// font-size:43px;
-}
-// /* Facebookアイコン背景*/
-// .fl_fb6{
-// background:-webkit-linear-gradient(top, #5c80c6 0%, #34528c 74%);	
-// background:linear-gradient(to bottom, #5c80c6 0%, #34528c 65%);	
-// }
 /* LINE@ */
 .fl_li6{
 background:#00c300;			
