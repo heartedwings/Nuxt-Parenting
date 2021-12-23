@@ -135,7 +135,6 @@ export default {
       this.FinalImg = finalImg
       // console.log(this.FinalImg);
     }
-
     // プロフィール画像
     const proImg = this.getUser.usersSign
     const proImg2 = []
@@ -148,7 +147,6 @@ export default {
       lastProImgArray3 = JSON.parse(lastProImgArray2)
 
       // console.log(lastProImgArray3);
-
       for (let ii = 0; ii < lastProImgArray3.length; ii++) {
         // console.log(lastProImgArray3[ii].picture);
 
