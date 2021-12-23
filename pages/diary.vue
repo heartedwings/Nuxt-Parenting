@@ -19,15 +19,15 @@
         </div>
         <ul class="snsbtniti">
           <!-- Twitterリンク -->
-          <li><a  href="https://twitter.com/share?url=https://haniwaman.com/original-share-btn/&text=『３歳以下の子供に使える子育てアプリ』" 
+          <li><a  href="https://twitter.com/share?url=https://nuxt-parenting.web.app/&text=『３歳以下の子供に使える子育てアプリ』" 
            rel="nofollow" target="_blank" class="flowbtn6 fl_tw1">
            <img src="~/assets/000a.jpg" width="50px" height="50px" class="pic" alt="twitterアイコン"></a></li>
            <!-- LINEリンク -->
-          <a href="//timeline.line.me/social-plugin/share?url=シェアするページのURL&text=『３歳以下の子供に使える子育てアプリ』" target="_blank" rel="nofollow noopener noreferrer">
+          <a href="//timeline.line.me/social-plugin/share?url=https://nuxt-parenting.web.app/&text=『３歳以下の子供に使える子育てアプリ』" target="_blank" rel="nofollow noopener noreferrer">
           <img src="~/assets/line.png" width="50px" height="50px" class="pic" alt="LINEアイコン">
 </a>
           <!-- FaceBookリンク -->
-          <li><a class="js-sns-link" href="//www.facebook.com/sharer/sharer.php?u=&t=『３歳以下の子供に使える子育てアプリ』" target="_blank" rel="nofollow noopener noreferrer">
+          <li><a class="js-sns-link" href="//www.facebook.com/sharer/sharer.php?u=https://nuxt-parenting.web.app/&t=『３歳以下の子供に使える子育てアプリ』" target="_blank" rel="nofollow noopener noreferrer">
           <img src="~/assets/fa.jpg" width="50px" height="50px" class="pic" alt="FaceBookアイコン"></a></li>
         </ul>
      <div class="m-3">
