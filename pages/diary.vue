@@ -60,7 +60,6 @@
 </div>
 </template>
 <script>
-import Vue from 'vue'
 import { mapActions, mapGetters } from 'vuex'
 import firebase from '~/plugins/firebase'
 import 'firebase/storage'
@@ -326,7 +325,7 @@ transform:translateY(-5px);
 }
 /* Twitter */
 .fl_tw1{
-background:#55acee;
+background:white
 }
 /* LINE@ */
 .fl_li6{
